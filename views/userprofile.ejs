@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en" class="h-100">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+   
+    <title>Online Learning Website</title>
+
+    
+</head>
+
+<body>
+
+    <div>
+        <header>
+            <h1>
+            Hello <%=userdetails.username%>
+         </h1>
+            </header>
+            
+
+                <nav>
+                    <a class="nav-link" aria-current="page" href="/">Home</a>
+                    <a class="nav-link active" href="/userprofile">Profile</a>
+                    <a class="nav-link" href="/task">Add task</a>
+                    <a class="nav-link" href="/course">Your Course</a>
+                    <a class="nav-link " href="/logout">Logout</a>
+                </nav>
+            
+        
+        
+
+        <main class="px-3">
+
+            <p>
+                Edit your details
+            </p>
+
+            <form action="/edit/<%= userdetails._id %>" method="POST">
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Username</label>
+                    <input type="text" readonly class="form-control" value="<%= userdetails.username %>"
+                        id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <div id="emailHelp" class="form-text">We'll never share your details with anyone else.</div>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Email address</label>
+                    <input type="email" value="<%= userdetails.email %>" name="email" class="form-control"
+                        id="exampleFormControlInput1">
+                </div>
+
+
+                <div class="mb-3">
+                    <label for="exampleFormControlInput2" class="form-label">Mobile No</label>
+                    <input type="text" value="<%= userdetails.phone %>" name="phone" class="form-control"
+                        id="exampleFormControlInput2">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlInput3" class="form-label">Role</label>
+                    <input type="text" value="<%= userdetails.role %>" name="role" class="form-control"
+                        id="exampleFormControlInput3">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlInput4" class="form-label">Language</label>
+                    <input type="text" value="<%= userdetails.language %>" name="language" class="form-control"
+                        id="exampleFormControlInput4">
+                </div>
+                <button type="submit" class="btn btn-primary">Edit Details</button>
+
+
+        </main>
+
+        <footer>
+            <p>
+                Extrapolated LMS website
+                <a href="https://stige.tech/" class="text-white"> Stige </a> Project, by
+                <a href="#" class="text-white">Dhriti Ranjan</a>.
+              </p>
+        </footer>
+    </div>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" class="h-100">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
+    
+
+    <title>Online Learning Website</title>
+  </head>
+
+  <body>
+    <div>
+      <header><h1>Task</h1></header>
+
+      <nav>
+        <a class="nav-link" aria-current="page" href="/">Home</a>
+        <a class="nav-link" href="/userprofile">Profile</a>
+        <a class="nav-link active" href="/task">Add Task</a>
+        <a class="nav-link" href="/course">Your Courses</a>
+        <a class="nav-link" href="/logout">Logout</a>
+      </nav>
+
+      <main class="px-3">
+        <form action="/task" method="POST">
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label"
+              >Enter String</label
+            >
+            <input
+              type="text"
+              name="content"
+              class="form-control"
+              id="exampleInputEmail1"
+              aria-describedby="emailHelp"
+            />
+
+            <input
+              type="checkbox"
+              class="form-check-input"
+              id="exampleCheck1"
+              name="comp"
+            />
+            <label class="form-check-label" for="exampleCheck1"
+              >Mark as completed</label
+            >
+
+            <button type="submit" class="btn btn-primary mt-4 p-2">
+              Add Task
+            </button>
+          </div>
+        </form>
+
+        <div class="container background mt-3">
+          <ul class="list-group mt-3">
+            <% Tasks.forEach(details=> { %>
+            <li class="list-group-item">
+              <span class="item-name"> <%= details.content %> </span>
+              <span class="item-name"> <%= details.iscomplete %> </span>
+              <a
+                href="task/edit/<%= details._id %>"
+                type="button"
+                class="btn btn-info btn1"
+              >
+                Edit
+              </a>
+              <a
+                href="/task/remove/<%= details._id %>"
+                type="button"
+                class="btn btn-danger btn1"
+              >
+                Delete
+              </a>
+            </li>
+            <% }) %>
+          </ul>
+        </div>
+      </main>
+      <footer>
+        <p>
+          
+          <p>
+            Extrapolated LMS website
+            <a href="https://stige.tech/" class="text-white"> Stige </a> Project, by
+            <a href="#" class="text-white">Dhriti Ranjan</a>.
+          </p>
+        </p>
+      </footer>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,58 @@
+<!Doctype html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <title>Todo</title>
+    
+</head>
+
+<body>
+    <div>
+
+
+        <header>
+            <h1>Edit Task</h1>
+        </header>
+        <div class="todo">
+
+
+            <ul class="list-group">
+                <% Tasks.forEach(details=> { %>
+                    <% if (details._id==idTask) { %>
+                        <li class="list-group-item">
+                            <form action="/task/edit/<%= details._id %>" method="POST">
+                                <input type="text" style="width: 80%;" value="<%= details.content %>" name="content">
+                                <input type="checkbox" style="width: 80%;" value="<%= details.iscomplete %>"
+                                    name="comp">
+
+                                <button type="submit" class="btn btn-success">Confirm</button>
+                                <a type="button" href="/" type="submit" class="btn btn-secondary">Cancel</a>
+
+                            </form>
+                        </li>
+                        <% } else { %>
+
+                            <% } %>
+                                <% }) %>
+            </ul>
+            <footer>
+                <p>
+                    Extrapolated LMS website
+                    <a href="https://stige.tech/" class="text-white"> Stige </a> Project, by
+                    <a href="#" class="text-white">Dhriti Ranjan</a>.
+                  </p>
+            </footer>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+            crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>

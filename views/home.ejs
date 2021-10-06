@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en" class="h-100">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Online Learning Website</title>
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+<style>
+  /* Style the video: 100% width and height to cover the entire window */
+/* #myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+} */
+
+/* Add some content at the bottom of the video/page */
+/* .content {
+  position: fixed;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  color: #f1f1f1;
+  width: 100%;
+  padding: 20px;
+} */
+
+/* Style the button used to pause/play the video */
+/* #myBtn {
+  width: 200px;
+  font-size: 18px;
+  padding: 10px;
+  border: none;
+  background: #000;
+  color: #fff;
+  cursor: pointer;
+}
+
+#myBtn:hover {
+  background: #ddd;
+  color: black;
+} */
+
+body{
+  background-image: url('/images/homebg.jpg');
+  background-position: center;
+}
+
+.navbar a{
+  color: aqua;
+  font-size: 30px;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bold;
+  margin-right: 20px;
+}
+
+.sectionbg
+{
+  padding: 60px;
+  background-color: rgb(232, 243, 135);
+  margin-top: 60px;
+  margin-right: 150px;
+  margin-left: 150px;  
+}
+
+.sectionbg .content{
+  padding-left: 20px;
+  color: rgb(0, 0, 0);
+  font-size: medium;
+  font-family: sans-serif;
+  font-weight: 600;
+}
+
+#myVideo{
+  width: 100%;
+}
+</style>
+    
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-black">
+      <div class="container">
+        <div class="col-md-1">
+          <a class="navbar-brand" href="#"><img src="../images/logo.jpg" alt="" style="width: 150px;"></a>
+        </div>
+        <div class="col-md-8 ">
+          <div class="float-right">
+          <!-- <a class="navbar-brand" href="#">Navbar</a> -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/">Home</a>
+              <% if(auth==="logged" ){ %>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/userprofile">Profile</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/task">Add task</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/course">your courses</a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link" href="/logout">Logout</a>
+            </li>
+            <% } else { %>
+              <li class="nav-item">
+                <a class="nav-link" href="/login">Login</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/register">Enroll</a>
+              </li>
+              <% } %>
+          </ul>
+        </div>
+        </div>
+      </div>
+        
+      </div>
+    </nav>
+    <section class="sectionbg">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <video autoplay muted loop id="myVideo" >
+              <source src="../images/video.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="col-md-6">
+            <!-- Optional: some overlay text to describe the video -->
+        <div class="content">
+          <h2>Welcome to Digital Study</h2>
+          <p>Hey there,</br>Learning Management System</br> A learning management system (LMS) is a software application or web-based technology used to plan, implement and assess a specific learning process such as digital learning. The systems can improve traditional educational methods, helping students learn in this pendamic while also saving organizations time and money.</p>
+          <!-- Use a button to pause/play the video with JavaScript -->
+          
+        </div>
+          </div>
+        
+        </div>
+           
+        
+        
+        
+        
+        
+    </section>
+   </div>
+   
+  </body>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+
+  <script>
+    // Get the video
+    var video = document.getElementById("myVideo");
+    
+    // Get the button
+    var btn = document.getElementById("myBtn");
+    
+    // Pause and play the video, and change the button text
+    function myFunction() {
+      if (video.paused) {
+        video.play();
+        btn.innerHTML = "Pause";
+      } else {
+        video.pause();
+        btn.innerHTML = "Play";
+      }
+    }
+    </script>
+</html>
