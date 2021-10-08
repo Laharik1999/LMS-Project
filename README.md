@@ -2,9 +2,7 @@
 
 Important: 
 
-Use npm i to install all dependencies 
-
-Rename the remove.env file to .env   
+Use npm i to install all dependencies   
 
 And connect to http://localhost:3000/
 
